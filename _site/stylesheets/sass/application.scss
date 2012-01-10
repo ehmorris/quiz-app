@@ -1,0 +1,22 @@
+@import 'normalize';
+
+/* Sass mixins from Bourbon by thoughtbot - https://github.com/thoughtbot/bourbon */
+@import 'bourbon/bourbon';
+
+body {
+	padding:1em;
+}
+
+ul {
+  padding:0;
+  li {
+    display:block;
+    list-style-type:none;
+    a {
+    	padding:1em .5em;
+    	background:#eee;
+    	display:block;
+    	margin-bottom:.5em;
+  	}
+	}
+}
