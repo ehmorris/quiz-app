@@ -373,6 +373,13 @@ table {
 
   /* to account for extra padding so backgorund doesn't show on slide in animation */ }
 
+@-webkit-keyframes yellow-flash {
+  0% {
+    background: yellow; }
+
+  100% {
+    background: #eee; } }
+
 /* styles */
 body {
   padding: 1em; }
@@ -386,7 +393,11 @@ h1 {
   position: absolute;
   font-size: 120%;
   font-weight: normal;
-  margin: 15px 0 0 0; }
+  margin: 28px 0 0 0; }
+
+nav.indicators_wrapper {
+  display: table;
+  margin: 0 auto; }
 
 ul.indicators {
   float: left;
@@ -395,10 +406,10 @@ ul.indicators {
   overflow: auto;
   padding: 0; }
   ul.indicators li {
-    display: inline-block;
+    display: inline;
     float: left;
     list-style-type: none;
-    margin-top: 50px;
+    margin-top: 35px;
     /* disable title on hover for inactive indicators */ }
     ul.indicators li span.q_num {
       background: #ccc;
@@ -447,8 +458,7 @@ ul.indicators {
 
 h2 {
   clear: both;
-  margin-bottom: .2em;
-  padding-top: 1em; }
+  margin-bottom: .2em; }
 
 h3 {
   color: #666;
@@ -468,6 +478,11 @@ ul.options {
     /* prevents scrollbar from appearing on next button animation */
     position: relative; }
     ul.options li span.o_next {
+      -webkit-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
+      -ms-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
+      -o-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
+      box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
       display: none;
       position: absolute;
       right: -20px;
@@ -476,18 +491,19 @@ ul.options {
       ul.options li span.o_next a {
         background: #666;
         color: #fff;
-        margin-bottom: 0;
+        display: block;
         padding: 1em 20px 1em 0;
         /* extra right padding for slide animation */
         text-align: center;
+        text-decoration: none;
         width: 130px; }
-    ul.options li a {
+    ul.options li a.option {
       background: #eee;
       color: #000;
       display: block;
       margin-bottom: .5em;
       text-decoration: none; }
-      ul.options li a span.o_label {
+      ul.options li a.option span.o_label {
         background: #ccc;
         display: inline-block;
         float: left;
@@ -495,22 +511,19 @@ ul.options {
         margin-right: 1em;
         text-align: center;
         width: 50px; }
-      ul.options li a span.o_text {
+      ul.options li a.option span.o_text {
         display: block;
         margin-left: 85px;
         padding: 1em 0; }
-      ul.options li a:focus, ul.options li a:active {
+      ul.options li a.option:focus, ul.options li a.option:active {
         background: #666;
         color: #fff; }
-        ul.options li a:focus span.o_label, ul.options li a:active span.o_label {
+        ul.options li a.option:focus span.o_label, ul.options li a.option:active span.o_label {
           background: #333; }
+  ul.options li.clicked a.option {
+    -webkit-animation: yellow-flash .3s; }
   ul.options li.clicked span.o_next {
     -webkit-animation: next-button-slide .3s;
-    -webkit-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
-    -ms-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
-    -o-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
-    box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
     display: block; }
   ul.options li.clicked a span.o_text {
     /*margin-right:145px;*/ }

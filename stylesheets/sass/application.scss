@@ -16,6 +16,11 @@ $top-height: 80px;
   100% {right:-20px} /* to account for extra padding so backgorund doesn't show on slide in animation */
 }
 
+@-webkit-keyframes yellow-flash {
+  0% {background:yellow;}
+  100% {background:#eee;}
+}
+
 /* styles */
 
 body {
@@ -32,7 +37,12 @@ h1 {
   position:absolute;
   font-size:120%;
   font-weight:normal;
-  margin:15px 0 0 0;
+  margin:$top-height * .35 0 0 0;
+}
+
+nav.indicators_wrapper {
+  display:table;
+  margin:0 auto;
 }
 
 ul.indicators {
@@ -43,10 +53,10 @@ ul.indicators {
   padding:0;
   
   li {
-    display:inline-block;
+    display:inline;
     float:left;
     list-style-type:none;
-    margin-top:$top-height * .625;
+    margin-top:$top-height * .4375;
     
     span.q_num {
       background:#ccc;
@@ -113,7 +123,6 @@ ul.indicators {
 h2 {
   clear:both;
   margin-bottom:.2em;
-  padding-top:1em;
 }
 
 h3 {
@@ -135,6 +144,7 @@ ul.options {
     position:relative;
     
     span.o_next {
+      @include box-shadow(-6px 0 6px -3px rgba(0,0,0,.3));
       display:none;
       position:absolute;
       right:-20px; /* to accommodate extra right padding */
@@ -143,14 +153,15 @@ ul.options {
       a {
         background:#666;
         color:#fff;
-        margin-bottom:0;
+        display:block;
         padding:1em 20px 1em 0; /* extra right padding for slide animation */
         text-align:center;
+        text-decoration:none;
         width:130px;
       }
     }
     
-    a {
+    a.option {
     	background:#eee;
     	color:#000;
     	display:block;
@@ -185,9 +196,13 @@ ul.options {
 	}
 	
 	li.clicked {
+	
+    a.option {
+      -webkit-animation: yellow-flash .3s;
+    }
+    
     span.o_next {
       -webkit-animation: next-button-slide .3s;
-      @include box-shadow(-6px 0 6px -3px rgba(0,0,0,.3));
       display:block;
     }
     
