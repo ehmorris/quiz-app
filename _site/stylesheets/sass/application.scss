@@ -48,7 +48,6 @@ ul.indicators {
       margin-right:.5em;
       text-align:center;
       width:1.75em;
-      
       &.active {
         background:#666;
         color:#fff;
@@ -77,6 +76,8 @@ ul.options {
   li {
     display:block;
     list-style-type:none;
+    margin-bottom:.75em;
+    overflow:auto;
     
     a {
     	background:#eee;
@@ -88,10 +89,17 @@ ul.options {
       span.o_label {
         background:#ccc;
         display:inline-block;
+        float:left;
         padding:1em .5em;
         margin-right:1em;
         text-align:center;
         width:50px;
+      }
+      
+      span.o_text {
+        display:block;
+        margin-left:85px;
+        padding:1em 0;
       }
       
       &:focus, &:active {
@@ -124,5 +132,10 @@ ul.options {
 }
 
 #skip {
-  margin-right:9em;
+  background:none;
+  margin-right:10em;
+  
+  &:focus, &:active {
+    color:#000;
+  }
 }

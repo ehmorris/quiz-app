@@ -416,7 +416,9 @@ ul.options {
   padding: 1em 0 0 0; }
   ul.options li {
     display: block;
-    list-style-type: none; }
+    list-style-type: none;
+    margin-bottom: .75em;
+    overflow: auto; }
     ul.options li a {
       background: #eee;
       color: #000;
@@ -426,10 +428,15 @@ ul.options {
       ul.options li a span.o_label {
         background: #ccc;
         display: inline-block;
+        float: left;
         padding: 1em .5em;
         margin-right: 1em;
         text-align: center;
         width: 50px; }
+      ul.options li a span.o_text {
+        display: block;
+        margin-left: 85px;
+        padding: 1em 0; }
       ul.options li a:focus, ul.options li a:active {
         background: #666;
         color: #fff; }
@@ -451,4 +458,7 @@ ul.options {
     color: #fff; }
 
 #skip {
-  margin-right: 9em; }
+  background: none;
+  margin-right: 10em; }
+  #skip:focus, #skip:active {
+    color: #000; }
