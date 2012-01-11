@@ -21,10 +21,15 @@ $top-height: 80px;
   100% {background:#eee;}
 }
 
+@-webkit-keyframes yellow-fadein {
+  0% {background:#ccc;}
+  100% {background:yellow;}
+}
+
 /* styles */
 
 body {
-	padding:1em;
+	padding:0 1.5em;
 }
 
 #wrapper {
@@ -34,10 +39,12 @@ body {
 }
 
 h1 {
+  color:#666;
   position:absolute;
-  font-size:120%;
+  font-size:100%;
   font-weight:normal;
-  margin:$top-height * .35 0 0 0;
+  margin:$top-height * .4125 0 0 0;
+  text-transform:uppercase;
 }
 
 nav.indicators_wrapper {
@@ -92,6 +99,7 @@ ul.indicators {
     span.q_title {
       background: rgba(0, 0, 0, .65);
       @include border-radius(5px);
+      @include border-top-left-radius(0);
       color: #fff;
       display:none;
       font-size:85%;
@@ -181,7 +189,7 @@ ul.options {
       span.o_text {
         display:block;
         margin-left:85px;
-        padding:1em 0;
+        padding:1em .5em 1em 0;
       }
       
       &:focus, &:active {
@@ -201,13 +209,14 @@ ul.options {
       -webkit-animation: yellow-flash .3s;
     }
     
+    a.option span.o_label {
+      -webkit-animation: yellow-fadein .3s;
+      background:yellow; /* keep yellow color */
+    }
+    
     span.o_next {
       -webkit-animation: next-button-slide .3s;
       display:block;
-    }
-    
-    a span.o_text {
-      /*margin-right:145px;*/
     }
 	}
 }

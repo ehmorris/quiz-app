@@ -380,9 +380,16 @@ table {
   100% {
     background: #eee; } }
 
+@-webkit-keyframes yellow-fadein {
+  0% {
+    background: #ccc; }
+
+  100% {
+    background: yellow; } }
+
 /* styles */
 body {
-  padding: 1em; }
+  padding: 0 1.5em; }
 
 #wrapper {
   margin: auto;
@@ -390,10 +397,12 @@ body {
   position: relative; }
 
 h1 {
+  color: #666;
   position: absolute;
-  font-size: 120%;
+  font-size: 100%;
   font-weight: normal;
-  margin: 28px 0 0 0; }
+  margin: 33px 0 0 0;
+  text-transform: uppercase; }
 
 nav.indicators_wrapper {
   display: table;
@@ -440,6 +449,11 @@ ul.indicators {
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
       border-radius: 5px;
+      -webkit-border-top-left-radius: 0;
+      -moz-border-top-left-radius: 0;
+      -ms-border-top-left-radius: 0;
+      -o-border-top-left-radius: 0;
+      border-top-left-radius: 0;
       color: #fff;
       display: none;
       font-size: 85%;
@@ -514,7 +528,7 @@ ul.options {
       ul.options li a.option span.o_text {
         display: block;
         margin-left: 85px;
-        padding: 1em 0; }
+        padding: 1em .5em 1em 0; }
       ul.options li a.option:focus, ul.options li a.option:active {
         background: #666;
         color: #fff; }
@@ -522,11 +536,13 @@ ul.options {
           background: #333; }
   ul.options li.clicked a.option {
     -webkit-animation: yellow-flash .3s; }
+  ul.options li.clicked a.option span.o_label {
+    -webkit-animation: yellow-fadein .3s;
+    background: yellow;
+    /* keep yellow color */ }
   ul.options li.clicked span.o_next {
     -webkit-animation: next-button-slide .3s;
     display: block; }
-  ul.options li.clicked a span.o_text {
-    /*margin-right:145px;*/ }
 
 .nextskip {
   background: #eee;
