@@ -48,14 +48,28 @@ ul.indicators {
       margin-right:.5em;
       text-align:center;
       width:1.75em;
-      &.active {
-        background:#666;
-        color:#fff;
-      }
       
       &:focus, &:active {
         background:#666;
         color:#fff;
+      }
+    }
+    
+    &.active {
+      span.q_num {
+        background:#666;
+        color:#fff;
+      }
+    }
+    
+    &.inactive {
+      span.q_num {
+        cursor:default;
+        opacity:.5;
+        &:focus, &:active {
+          background:#ccc;
+          color:inherit;
+        }
       }
     }
     
@@ -136,6 +150,6 @@ ul.options {
   margin-right:10em;
   
   &:focus, &:active {
-    color:#000;
+    background:#666;
   }
 }

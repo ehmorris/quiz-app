@@ -399,12 +399,18 @@ ul.indicators {
       margin-right: .5em;
       text-align: center;
       width: 1.75em; }
-      ul.indicators li span.q_num.active {
-        background: #666;
-        color: #fff; }
       ul.indicators li span.q_num:focus, ul.indicators li span.q_num:active {
         background: #666;
         color: #fff; }
+    ul.indicators li.active span.q_num {
+      background: #666;
+      color: #fff; }
+    ul.indicators li.inactive span.q_num {
+      cursor: default;
+      opacity: .5; }
+      ul.indicators li.inactive span.q_num:focus, ul.indicators li.inactive span.q_num:active {
+        background: #ccc;
+        color: inherit; }
     ul.indicators li span.q_title {
       display: none; }
 
@@ -461,4 +467,4 @@ ul.options {
   background: none;
   margin-right: 10em; }
   #skip:focus, #skip:active {
-    color: #000; }
+    background: #666; }
