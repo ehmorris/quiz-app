@@ -8,6 +8,16 @@ $gw-gutter: 30px;
 /* height for indicators / quiz title */
 $top-height: 80px;
 
+/* keyframes */
+
+@-webkit-keyframes next-button-slide {
+  0% {right:-130px}
+  40% {right:0}
+  100% {right:-30px} /* to account for extra padding so backgorund doesn't show on slide in animation */
+}
+
+/* styles */
+
 body {
 	padding:1em;
 }
@@ -43,11 +53,12 @@ ul.indicators {
       cursor:pointer;
       @include border-radius(100px);
       display:block;
-      height:2.25em;
-      line-height:2.25em;
-      margin-right:.5em;
+      height:.75em;
+      line-height:.75em;
+      margin-right:.35em;
       text-align:center;
-      width:2.25em;
+      text-indent:-9999px;
+      width:.75em;
       
       &:focus, &:active {
         background:#666;
@@ -73,6 +84,7 @@ ul.indicators {
       @include border-radius(5px);
       color: #fff;
       display:none;
+      font-size:85%;
       margin-top:.5em;
       padding: .5em .5em;
       position:absolute;
@@ -100,7 +112,16 @@ ul.indicators {
 
 h2 {
   clear:both;
+  margin-bottom:.2em;
   padding-top:1em;
+}
+
+h3 {
+  color:#666;
+  font-size:70%;
+  font-weight:normal;
+  margin:0;
+  text-transform:uppercase
 }
 
 ul.options {
@@ -110,19 +131,19 @@ ul.options {
     display:block;
     list-style-type:none;
     margin-bottom:.75em;
-    overflow:auto;
+    overflow:hidden; /* prevents scrollbar from appearing on next button animation */
     position:relative;
     
     span.o_next {
       display:none;
       position:absolute;
-      right:0;
+      right:-30px; /* to accommodate extra right padding */
       top:0;
       
       a {
         background:#ccc;
         margin-bottom:0;
-        padding:1em 0;
+        padding:1em 30px 1em 0; /* extra right padding for slide animation */
         text-align:center;
         width:130px;
       }
@@ -160,6 +181,18 @@ ul.options {
         }
       }
   	}
+	}
+	
+	li.clicked {
+    span.o_next {
+      -webkit-animation: next-button-slide .3s;
+      @include box-shadow(-6px 0 6px -3px rgba(0,0,0,.3));
+      display:block;
+    }
+    
+    a span.o_text {
+      /*margin-right:145px;*/
+    }
 	}
 }
 

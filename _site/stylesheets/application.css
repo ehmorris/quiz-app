@@ -360,6 +360,20 @@ table {
 
 /* six columns for 960px width */
 /* height for indicators / quiz title */
+/* keyframes */
+@-webkit-keyframes next-button-slide {
+  0% {
+    right: -130px; }
+
+  40% {
+    right: 0; }
+
+  100% {
+    right: -30px; }
+
+  /* to account for extra padding so backgorund doesn't show on slide in animation */ }
+
+/* styles */
 body {
   padding: 1em; }
 
@@ -395,11 +409,12 @@ ul.indicators {
       -o-border-radius: 100px;
       border-radius: 100px;
       display: block;
-      height: 2.25em;
-      line-height: 2.25em;
-      margin-right: .5em;
+      height: .75em;
+      line-height: .75em;
+      margin-right: .35em;
       text-align: center;
-      width: 2.25em; }
+      text-indent: -9999px;
+      width: .75em; }
       ul.indicators li span.q_num:focus, ul.indicators li span.q_num:active {
         background: #666;
         color: #fff; }
@@ -416,6 +431,7 @@ ul.indicators {
       border-radius: 5px;
       color: #fff;
       display: none;
+      font-size: 85%;
       margin-top: .5em;
       padding: .5em .5em;
       position: absolute; }
@@ -431,7 +447,15 @@ ul.indicators {
 
 h2 {
   clear: both;
+  margin-bottom: .2em;
   padding-top: 1em; }
+
+h3 {
+  color: #666;
+  font-size: 70%;
+  font-weight: normal;
+  margin: 0;
+  text-transform: uppercase; }
 
 ul.options {
   padding: 1em 0 0 0; }
@@ -439,17 +463,20 @@ ul.options {
     display: block;
     list-style-type: none;
     margin-bottom: .75em;
-    overflow: auto;
+    overflow: hidden;
+    /* prevents scrollbar from appearing on next button animation */
     position: relative; }
     ul.options li span.o_next {
       display: none;
       position: absolute;
-      right: 0;
+      right: -30px;
+      /* to accommodate extra right padding */
       top: 0; }
       ul.options li span.o_next a {
         background: #ccc;
         margin-bottom: 0;
-        padding: 1em 0;
+        padding: 1em 30px 1em 0;
+        /* extra right padding for slide animation */
         text-align: center;
         width: 130px; }
     ul.options li a {
@@ -475,6 +502,16 @@ ul.options {
         color: #fff; }
         ul.options li a:focus span.o_label, ul.options li a:active span.o_label {
           background: #333; }
+  ul.options li.clicked span.o_next {
+    -webkit-animation: next-button-slide .3s;
+    -webkit-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
+    box-shadow: -6px 0 6px -3px rgba(0, 0, 0, 0.3);
+    display: block; }
+  ul.options li.clicked a span.o_text {
+    /*margin-right:145px;*/ }
 
 .nextskip {
   background: #eee;

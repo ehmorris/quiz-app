@@ -1,12 +1,13 @@
+// makes label fill full height of its parent option
 function fix_option_label_height() {
 
   $('ul.options li').each(function() {
   
     var label_height = $(this).children('a').children('.o_label').outerHeight();
     var text_height = $(this).children('a').outerHeight();
+    
     if (label_height !== text_height) {
       $(this).children('a').children('.o_label').css({
-      
         'padding-top': 0,
         'padding-bottom': 0,
         'height': text_height + 'px',
@@ -16,6 +17,7 @@ function fix_option_label_height() {
   });
 }
 
+// on load
 $(function() {
 
   $('ul.indicators .active').nextAll().addClass('inactive');
@@ -24,17 +26,21 @@ $(function() {
   
   $('ul.options li a').click(function() {
   
-    // remove any other next buttons
-    $('.o_next').hide();
-  
-    $(this).parent().children('.o_next').show();
+    // remove clicked class from any other options
+    $('ul.options li.clicked').removeClass('clicked');
     
+    $(this).parent().addClass('clicked');
+    
+    fix_option_label_height();
+    
+    // makes next button fill full height of its parent option 
     $('ul.options li').each(function() {
+    
       var label_height = $(this).children('.o_next').outerHeight();
       var text_height = $(this).children('a').outerHeight();
+      
       if (label_height !== text_height) {
         $(this).children('.o_next').children('a').css({
-        
           'padding-top': 0,
           'padding-bottom': 0,
           'height': text_height + 'px',
