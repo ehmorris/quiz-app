@@ -13,7 +13,7 @@ $top-height: 80px;
 @-webkit-keyframes next-button-slide {
   0% {right:-130px}
   40% {right:0}
-  100% {right:-30px} /* to account for extra padding so backgorund doesn't show on slide in animation */
+  100% {right:-20px} /* to account for extra padding so backgorund doesn't show on slide in animation */
 }
 
 /* styles */
@@ -32,7 +32,7 @@ h1 {
   position:absolute;
   font-size:120%;
   font-weight:normal;
-  margin:0;
+  margin:15px 0 0 0;
 }
 
 ul.indicators {
@@ -46,7 +46,7 @@ ul.indicators {
     display:inline-block;
     float:left;
     list-style-type:none;
-    margin-top:$top-height * .55;
+    margin-top:$top-height * .625;
     
     span.q_num {
       background:#ccc;
@@ -120,7 +120,7 @@ h3 {
   color:#666;
   font-size:70%;
   font-weight:normal;
-  margin:0;
+  margin:0 0 0 1px; /* small margin for optical alignment */
   text-transform:uppercase
 }
 
@@ -130,20 +130,21 @@ ul.options {
   li {
     display:block;
     list-style-type:none;
-    margin-bottom:.75em;
+    margin-bottom:.4em;
     overflow:hidden; /* prevents scrollbar from appearing on next button animation */
     position:relative;
     
     span.o_next {
       display:none;
       position:absolute;
-      right:-30px; /* to accommodate extra right padding */
+      right:-20px; /* to accommodate extra right padding */
       top:0;
       
       a {
-        background:#ccc;
+        background:#666;
+        color:#fff;
         margin-bottom:0;
-        padding:1em 30px 1em 0; /* extra right padding for slide animation */
+        padding:1em 20px 1em 0; /* extra right padding for slide animation */
         text-align:center;
         width:130px;
       }

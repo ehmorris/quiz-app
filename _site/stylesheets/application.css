@@ -369,7 +369,7 @@ table {
     right: 0; }
 
   100% {
-    right: -30px; }
+    right: -20px; }
 
   /* to account for extra padding so backgorund doesn't show on slide in animation */ }
 
@@ -386,7 +386,7 @@ h1 {
   position: absolute;
   font-size: 120%;
   font-weight: normal;
-  margin: 0; }
+  margin: 15px 0 0 0; }
 
 ul.indicators {
   float: left;
@@ -398,7 +398,7 @@ ul.indicators {
     display: inline-block;
     float: left;
     list-style-type: none;
-    margin-top: 44px;
+    margin-top: 50px;
     /* disable title on hover for inactive indicators */ }
     ul.indicators li span.q_num {
       background: #ccc;
@@ -454,7 +454,8 @@ h3 {
   color: #666;
   font-size: 70%;
   font-weight: normal;
-  margin: 0;
+  margin: 0 0 0 1px;
+  /* small margin for optical alignment */
   text-transform: uppercase; }
 
 ul.options {
@@ -462,20 +463,21 @@ ul.options {
   ul.options li {
     display: block;
     list-style-type: none;
-    margin-bottom: .75em;
+    margin-bottom: .4em;
     overflow: hidden;
     /* prevents scrollbar from appearing on next button animation */
     position: relative; }
     ul.options li span.o_next {
       display: none;
       position: absolute;
-      right: -30px;
+      right: -20px;
       /* to accommodate extra right padding */
       top: 0; }
       ul.options li span.o_next a {
-        background: #ccc;
+        background: #666;
+        color: #fff;
         margin-bottom: 0;
-        padding: 1em 30px 1em 0;
+        padding: 1em 20px 1em 0;
         /* extra right padding for slide animation */
         text-align: center;
         width: 130px; }

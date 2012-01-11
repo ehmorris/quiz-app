@@ -1,27 +1,5 @@
-Static Site Starter
+Requirements
 ===================
-
-Template for starting static sites including Sass, Bourbon and Twitter Bootstrap
-
-HTML5 Boilerplate
------------------
-Includes some [HTML5 Boilerplate](http://html5boilerplate.com/) goodness in the index.html file, plus the [Modernizr.js](http://www.modernizr.com/) library.
-
-Items were added from version 2.0, which was originally authored on August 10th, 2011.
-
-I took these items from the site on December 18, 2011.
-
-Sass
-----
-Better CSS. For more, see [the Sass homepage](http://sass-lang.com/).
-
-Bourbon
--------
-thoughbot's set of [Sass mixins](https://github.com/thoughtbot/bourbon).
-
-Twitter Bootstrap
-------
-Base CSS toolkit: http://twitter.github.com/bootstrap/
 
 Jekyll
 ------
