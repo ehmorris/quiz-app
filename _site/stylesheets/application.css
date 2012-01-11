@@ -365,26 +365,27 @@ body {
 
 #wrapper {
   margin: auto;
-  position: relative;
-  width: 960px; }
+  max-width: 1024px;
+  position: relative; }
 
 h1 {
-  float: left;
-  height: 80px;
-  line-height: 80px;
+  position: absolute;
+  font-size: 120%;
+  font-weight: normal;
   margin: 0; }
 
 ul.indicators {
   float: left;
   height: 80px;
-  margin: 0 0 0 1em;
+  margin: 0;
   overflow: auto;
   padding: 0; }
   ul.indicators li {
     display: inline-block;
     float: left;
     list-style-type: none;
-    margin-top: 27px; }
+    margin-top: 44px;
+    /* disable title on hover for inactive indicators */ }
     ul.indicators li span.q_num {
       background: #ccc;
       cursor: pointer;
@@ -394,14 +395,30 @@ ul.indicators {
       -o-border-radius: 100px;
       border-radius: 100px;
       display: block;
-      height: 1.75em;
-      line-height: 1.75em;
+      height: 2.25em;
+      line-height: 2.25em;
       margin-right: .5em;
       text-align: center;
-      width: 1.75em; }
+      width: 2.25em; }
       ul.indicators li span.q_num:focus, ul.indicators li span.q_num:active {
         background: #666;
         color: #fff; }
+    ul.indicators li:hover span.q_title {
+      display: block; }
+    ul.indicators li.inactive:hover span.q_title {
+      display: none; }
+    ul.indicators li span.q_title {
+      background: rgba(0, 0, 0, 0.65);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;
+      color: #fff;
+      display: none;
+      margin-top: .5em;
+      padding: .5em .5em;
+      position: absolute; }
     ul.indicators li.active span.q_num {
       background: #666;
       color: #fff; }
@@ -411,8 +428,6 @@ ul.indicators {
       ul.indicators li.inactive span.q_num:focus, ul.indicators li.inactive span.q_num:active {
         background: #ccc;
         color: inherit; }
-    ul.indicators li span.q_title {
-      display: none; }
 
 h2 {
   clear: both;
@@ -424,7 +439,19 @@ ul.options {
     display: block;
     list-style-type: none;
     margin-bottom: .75em;
-    overflow: auto; }
+    overflow: auto;
+    position: relative; }
+    ul.options li span.o_next {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0; }
+      ul.options li span.o_next a {
+        background: #ccc;
+        margin-bottom: 0;
+        padding: 1em 0;
+        text-align: center;
+        width: 130px; }
     ul.options li a {
       background: #eee;
       color: #000;
@@ -454,17 +481,18 @@ ul.options {
   color: #000;
   height: 80px;
   line-height: 80px;
-  padding: 0 3em;
   position: absolute;
   right: 0;
+  text-align: center;
   text-decoration: none;
-  top: 0; }
+  top: 0;
+  width: 130px; }
   .nextskip:focus, .nextskip:active {
     background: #666;
     color: #fff; }
 
 #skip {
-  background: none;
-  margin-right: 10em; }
+  background: #eee;
+  /*margin-right:10em;*/ }
   #skip:focus, #skip:active {
     background: #666; }

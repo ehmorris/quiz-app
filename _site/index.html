@@ -3,7 +3,8 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>VPP Client Mockup</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- fixes zoom problems when changing orientation. prevents zooming -->
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" type="text/css" href="stylesheets/application.css" />
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="javascripts/javascripts.js"></script>
@@ -22,21 +23,46 @@
   <li><span class="q_num">6</span> <span class="q_title">Question title</span></li>
   <li><span class="q_num">7</span> <span class="q_title">Question title</span></li>
   <li><span class="q_num">8</span> <span class="q_title">Question title</span></li>
-
+  <li><span class="q_num">9</span> <span class="q_title">Question title</span></li>
+  <li><span class="q_num">10</span> <span class="q_title">Question title</span></li>
+  <li><span class="q_num">11</span> <span class="q_title">Question title</span></li>
 </ul>
 
 <h2>Question title</h2>
 <p>Question content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis lacus a enim luctus pharetra. In eu lacinia mauris. Suspendisse potenti. Curabitur consectetur laoreet odio vel blandit. Etiam sollicitudin faucibus magna a bibendum. Vivamus non nisi erat. Etiam tempus vulputate consectetur.</p>
 
 <ul class="options">
-	<li><a href="#"><span class="o_label">A</span> <span class="o_text">Option 1</span></a></li>
-	<li><a href="#"><span class="o_label">B</span> <span class="o_text">Option 2</span></a></li>
-	<li><a href="#"><span class="o_label">C</span> <span class="o_text">Long option 3. Curabitur consectetur laoreet odio vel blandit. Etiam sollicitudin faucibus magna a bibendum. Vivamus non nisi erat. Etiam tempus vulputate consectetur. Sed quis lacus a enim luctus pharetra. In eu lacinia mauris. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></a></li>
-	<li><a href="#"><span class="o_label">D</span> <span class="o_text">Option 4</span></a></li>
-	<li><a href="#"><span class="o_label">E</span> <span class="o_text">Option 5</span></a></li>
+	<li>
+    <a href="javascript:;"><span class="o_label">A</span> <span class="o_text">Option 1</span></a>
+    <span class="o_next"><a href="#">Next</a></span>
+	</li>
+	<li>
+    <a href="javascript:;"><span class="o_label">B</span> <span class="o_text">Option 2</span></a>
+    <span class="o_next"><a href="#">Next</a></span>
+  </li>
+	<li>
+	  <a href="javascript:;"><span class="o_label">C</span> <span class="o_text">Long option 3. Curabitur consectetur laoreet odio vel blandit. Etiam sollicitudin faucibus magna a bibendum. Vivamus non nisi erat. Etiam tempus vulputate consectetur. Sed quis lacus a enim luctus pharetra. In eu lacinia mauris. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></a>
+    <span class="o_next"><a href="#">Next</a></span>
+  </li>
+	<li>
+	  <a href="javascript:;"><span class="o_label">D</span> <span class="o_text">Option 4</span></a>
+    <span class="o_next"><a href="#">Next</a></span>
+  </li>
+	<li>
+	  <a href="javascript:;"><span class="o_label">E</span> <span class="o_text">Option 5</span></a>
+    <span class="o_next"><a href="#">Next</a></span>
+  </li>
+	<li>
+	  <a href="javascript:;"><span class="o_label">F</span> <span class="o_text">Option 6</span></a>
+    <span class="o_next"><a href="#">Next</a></span>
+  </li>
+	<li>
+	  <a href="javascript:;"><span class="o_label">G</span> <span class="o_text">Option 7</span></a>
+    <span class="o_next"><a href="#">Next</a></span>
+  </li>
 </ul>
 
-<a href="#" class="nextskip" id="next">Next</a>
+<!--<a href="#" class="nextskip" id="next">Next</a>-->
 <a href="#" class="nextskip" id="skip">Skip</a>
 	</div>
 

@@ -14,21 +14,21 @@ body {
 
 #wrapper {
   margin:auto;
+  max-width:1024px;
   position:relative;
-  width: grid-width(6);
 }
 
 h1 {
-  float:left;
-  height:$top-height;
-  line-height:80px;
+  position:absolute;
+  font-size:120%;
+  font-weight:normal;
   margin:0;
 }
 
 ul.indicators {
   float:left;
   height:$top-height;
-  margin:0 0 0 1em;
+  margin:0;
   overflow:auto;
   padding:0;
   
@@ -36,23 +36,46 @@ ul.indicators {
     display:inline-block;
     float:left;
     list-style-type:none;
-    margin-top:$top-height * .3375;
+    margin-top:$top-height * .55;
     
     span.q_num {
       background:#ccc;
       cursor:pointer;
       @include border-radius(100px);
       display:block;
-      height:1.75em;
-      line-height:1.75em;
+      height:2.25em;
+      line-height:2.25em;
       margin-right:.5em;
       text-align:center;
-      width:1.75em;
+      width:2.25em;
       
       &:focus, &:active {
         background:#666;
         color:#fff;
       }
+    }
+    
+    &:hover {
+      span.q_title {
+        display:block;
+      }
+    }
+    
+    /* disable title on hover for inactive indicators */
+    &.inactive:hover {
+      span.q_title {
+        display:none;
+      }
+    }
+    
+    span.q_title {
+      background: rgba(0, 0, 0, .65);
+      @include border-radius(5px);
+      color: #fff;
+      display:none;
+      margin-top:.5em;
+      padding: .5em .5em;
+      position:absolute;
     }
     
     &.active {
@@ -72,10 +95,6 @@ ul.indicators {
         }
       }
     }
-    
-    span.q_title {
-      display:none;
-    }
   }
 }
 
@@ -92,6 +111,22 @@ ul.options {
     list-style-type:none;
     margin-bottom:.75em;
     overflow:auto;
+    position:relative;
+    
+    span.o_next {
+      display:none;
+      position:absolute;
+      right:0;
+      top:0;
+      
+      a {
+        background:#ccc;
+        margin-bottom:0;
+        padding:1em 0;
+        text-align:center;
+        width:130px;
+      }
+    }
     
     a {
     	background:#eee;
@@ -133,11 +168,12 @@ ul.options {
   color:#000;
   height:$top-height;
   line-height:$top-height;
-  padding:0 3em;
   position:absolute;
   right:0;
+  text-align:center;
   text-decoration:none;
   top:0;
+  width:130px;
   
   &:focus, &:active {
     background:#666;
@@ -146,8 +182,8 @@ ul.options {
 }
 
 #skip {
-  background:none;
-  margin-right:10em;
+  background:#eee;
+  /*margin-right:10em;*/
   
   &:focus, &:active {
     background:#666;
