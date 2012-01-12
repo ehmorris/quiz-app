@@ -216,28 +216,23 @@ ul.options {
     	text-decoration:none;
     	
       span.o_label {
-        background:#ccc;
+        color:#999;
         display:inline-block;
         float:left;
-        padding:1em .5em;
-        margin-right:1em;
+        padding:1em 0;
         text-align:center;
         width:50px;
       }
       
       span.o_text {
         display:block;
-        margin-left:85px;
+        margin-left:50px;
         padding:1em .5em 1em 0;
       }
       
       &:focus, &:active {
         background:#666;
         color:#fff;
-        
-        span.o_label {
-          background:#333;
-        }
       }
   	}
 	}
@@ -295,7 +290,7 @@ ul.options {
   }
   
   ul.indicators {
-    margin-top: 0;
+    margin-top:-$top-height / 4;
     li.q_nav {
       display:none;
     }
@@ -324,41 +319,3 @@ ul.options {
     width:50px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

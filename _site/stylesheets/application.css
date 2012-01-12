@@ -545,22 +545,19 @@ ul.options {
       margin-bottom: .5em;
       text-decoration: none; }
       ul.options li a.option span.o_label {
-        background: #ccc;
+        color: #999;
         display: inline-block;
         float: left;
-        padding: 1em .5em;
-        margin-right: 1em;
+        padding: 1em 0;
         text-align: center;
         width: 50px; }
       ul.options li a.option span.o_text {
         display: block;
-        margin-left: 85px;
+        margin-left: 50px;
         padding: 1em .5em 1em 0; }
       ul.options li a.option:focus, ul.options li a.option:active {
         background: #666;
         color: #fff; }
-        ul.options li a.option:focus span.o_label, ul.options li a.option:active span.o_label {
-          background: #333; }
   ul.options li.clicked a.option {
     -webkit-animation: yellow-flash .3s; }
   ul.options li.clicked a.option span.o_label {
@@ -602,7 +599,7 @@ ul.options {
     text-align: center; }
 
   ul.indicators {
-    margin-top: 0; }
+    margin-top: -20px; }
     ul.indicators li.q_nav {
       display: none; }
 
