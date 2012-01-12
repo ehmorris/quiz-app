@@ -24,7 +24,7 @@ $(function() {
   
   fix_option_label_height();
   
-  $('ul.options li a').click(function() {
+  $('ul.options li a.option').click(function() {
   
     // remove clicked class from any other options
     $('ul.options li.clicked').removeClass('clicked');
@@ -56,3 +56,8 @@ $(window).resize(function() {
 
   fix_option_label_height();
 });
+
+// flash an error message
+/*
+$('.message .error').fadeIn(100).delay(500).fadeOut(500);
+*/

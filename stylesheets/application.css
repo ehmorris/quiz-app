@@ -391,6 +391,24 @@ table {
 body {
   padding: 0 1.5em; }
 
+.message {
+  display: block;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 1; }
+  .message .saved, .message .error, .message .time {
+    display: none;
+    padding: .5em;
+    margin: 0 0 0 -1.5em; }
+  .message .saved {
+    background: #00ff00; }
+  .message .error {
+    background: #ff0000;
+    color: #fff; }
+  .message .time {
+    background: #ccc; }
+
 #wrapper {
   margin: auto;
   max-width: 1024px;
@@ -537,11 +555,14 @@ ul.options {
   ul.options li.clicked a.option {
     -webkit-animation: yellow-flash .3s; }
   ul.options li.clicked a.option span.o_label {
-    -webkit-animation: yellow-fadein .3s;
-    background: yellow;
-    /* keep yellow color */ }
+    /*-webkit-animation: yellow-fadein .3s;*/
+    /*background:yellow; /* keep yellow color */ }
   ul.options li.clicked span.o_next {
-    -webkit-animation: next-button-slide .3s;
+    -webkit-animation: next-button-slide 0.3s;
+    -moz-animation: next-button-slide 0.3s;
+    -ms-animation: next-button-slide 0.3s;
+    -o-animation: next-button-slide 0.3s;
+    animation: next-button-slide 0.3s;
     display: block; }
 
 .nextskip {
