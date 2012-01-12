@@ -460,6 +460,12 @@ ul.indicators {
       display: block; }
     ul.indicators li.inactive:hover span.q_title {
       display: none; }
+    ul.indicators li.q_nav {
+      color: #666;
+      font-size: 70%;
+      margin-left: .65em;
+      margin-right: 1em;
+      text-transform: uppercase; }
     ul.indicators li span.q_title {
       background: rgba(0, 0, 0, 0.65);
       -webkit-border-radius: 5px;
@@ -488,17 +494,20 @@ ul.indicators {
         background: #ccc;
         color: inherit; }
 
-h2 {
+h2.q_title {
   clear: both;
   margin-bottom: .2em; }
 
-h3 {
+h3.q_num {
   color: #666;
   font-size: 70%;
   font-weight: normal;
   margin: 0 0 0 1px;
   /* small margin for optical alignment */
   text-transform: uppercase; }
+
+.q_content {
+  font-size: 120%; }
 
 ul.options {
   padding: 1em 0 0 0; }
@@ -585,3 +594,33 @@ ul.options {
   /*margin-right:10em;*/ }
   #skip:focus, #skip:active {
     background: #666; }
+
+/* media query for regular iPhone and iPhone retina displays (iPod touches too) */
+@media screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2) {
+  h1 {
+    position: relative;
+    text-align: center; }
+
+  ul.indicators {
+    margin-top: 0; }
+    ul.indicators li.q_nav {
+      display: none; }
+
+  h2.q_title {
+    margin-top: 0; }
+
+  .q_content {
+    font-size: 100%; }
+
+  .nextskip {
+    background: none; }
+
+  #skip {
+    background: #ccc;
+    display: block;
+    height: auto;
+    line-height: 0;
+    padding: 1.5em .5em;
+    position: relative;
+    text-align: center;
+    width: 50px; } }

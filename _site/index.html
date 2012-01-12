@@ -22,9 +22,10 @@
 
 <nav class="indicators_wrapper">
   <ul class="indicators">
+    <li class="q_nav">prev</li>
     <li><span class="q_num">1</span> <span class="q_title">Question title</span></li>
     <li><span class="q_num">2</span> <span class="q_title">Question title</span></li>
-    <li class="active"><span class="q_num">3</span> <span class="q_title">Question title</span></li>
+    <li class="active current"><span class="q_num">3</span> <span class="q_title">Question title</span></li>
     <li><span class="q_num">4</span> <span class="q_title">Question title</span></li>
     <li><span class="q_num">5</span> <span class="q_title">Question title</span></li>
     <li><span class="q_num">6</span> <span class="q_title">Question title</span></li>
@@ -33,12 +34,16 @@
     <li><span class="q_num">9</span> <span class="q_title">Question title</span></li>
     <li><span class="q_num">10</span> <span class="q_title">Question title</span></li>
     <li><span class="q_num">11</span> <span class="q_title">Question title</span></li>
+    <li class="q_nav">next</li>
   </ul>
 </nav>
 
-<h2>Question title</h2>
-<h3>Question 3</h3>
-<p>Question content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis lacus a enim luctus pharetra. In eu lacinia mauris. Suspendisse potenti. Curabitur consectetur laoreet odio vel blandit. Etiam sollicitudin faucibus magna a bibendum. Vivamus non nisi erat. Etiam tempus vulputate consectetur.</p>
+<h2 class="q_title">Question title</h2>
+<h3 class="q_num">Question 3</h3>
+<p class="q_content">Question content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis lacus a enim luctus pharetra. In eu lacinia mauris. Suspendisse potenti. Curabitur consectetur laoreet odio vel blandit. Etiam sollicitudin faucibus magna a bibendum. Vivamus non nisi erat. Etiam tempus vulputate consectetur.</p>
+
+<!--<a href="javascript:void(0);" class="nextskip" id="next">Next</a>-->
+<a href="javascript:void(0);" class="nextskip" id="skip">Skip</a>
 
 <ul class="options">
 	<li>
@@ -70,9 +75,6 @@
     <span class="o_next"><a href="javascript:void(0);">Next</a></span>
   </li>
 </ul>
-
-<!--<a href="javascript:void(0);" class="nextskip" id="next">Next</a>-->
-<a href="javascript:void(0);" class="nextskip" id="skip">Skip</a>
 	</div>
 
 </body>
